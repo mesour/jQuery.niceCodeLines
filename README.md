@@ -28,6 +28,8 @@ var options = {
 
     wrapperClass: 'nice-code-lines', // default wrapper class
 
+    scrollAbout: 0, // number about scroll if URL match 0 = on current line top
+
     applyHashAfterReady: true, // disable auto hash using
 
     urlHashMatch: function() {} // called if hash in URL match

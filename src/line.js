@@ -22,6 +22,8 @@
 
             wrapperClass: 'nice-code-lines',
 
+            scrollAbout: 0,
+
             applyHashAfterReady: true,
 
             urlHashMatch: function() {}
@@ -114,12 +116,14 @@
         });
 
         var fixBox = function() {
-            var contentHeight = content.outerHeight() + 20;
+            var padding = $('pre.php').outerHeight()-$('pre.php').height();
+
+            var contentHeight = content.outerHeight() + padding;
             var numbersHeight = leftColumn.outerHeight();
 
             while(numbersHeight < contentHeight) {
                 content.width(content.width()+10);
-                contentHeight = content.outerHeight() + 20;
+                contentHeight = content.outerHeight() + padding;
             }
         };
         fixBox();
@@ -130,13 +134,13 @@
                 hash = splittedHash[0];
 
             if(!hash.match(/.+-.+/)) {
-                $(window).scrollTop($(hash+'-'+boxNum).offset().top);
+                $(window).scrollTop($(hash+'-'+boxNum).offset().top + options.scrollAbout);
                 content.find('[data-id="'+(hash.replace('#', ''))+'-' + boxNum + '"]').addClass('highlighted');
             } else {
                 var splitted = hash.replace('#', '').replace('L', '').split('-');
                 var from = Number(splitted[0]),
                     to = Number(splitted[1]);
-                $(window).scrollTop($('#L'+from+'-'+boxNum).offset().top);
+                $(window).scrollTop($('#L'+from+'-'+boxNum).offset().top + options.scrollAbout);
                 for(var x = from; x < to + 1; x++) {
                     content.find('[data-id="L'+x+'-' + boxNum + '"]').addClass('highlighted');
                 }
