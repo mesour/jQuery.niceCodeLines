@@ -1,6 +1,6 @@
 # jQuery.niceCodeLines
 
-Add lines before for the HTML element. It only works on pre element. Plugin can generate the URL hash for sharing specific line / lines. Works the same as on GitHub.
+Add lines before pre HTML element. It only works on pre element. Plugin can generate the URL hash for sharing specific line / lines. Works the same as on GitHub. Group or individual line selection.
 
 - [Author](http://mesour.com)
 - [Contact](http://mesour.com/contact)
@@ -8,14 +8,13 @@ Add lines before for the HTML element. It only works on pre element. Plugin can 
 # Basic look
 ![basic](http://mesour.com/images/01.png)
 
-# Selected line
+# Individual line selection
 ![basic](http://mesour.com/images/02.png)
 
-# Many selected lines
+# Group line selection
 ![basic](http://mesour.com/images/03.png)
 
 # Initialization
-Have to called after docuemnt is ready.
 ```javascript
 $(function(){
     $('pre').niceCodeLines();
@@ -26,10 +25,15 @@ $(function(){
 ```javascript
 // default values
 var options = {
+
     wrapperClass: 'nice-code-lines', // default wrapper class
+
     applyHashAfterReady: true, // disable auto hash using
+
     urlHashMatch: function() {} // called if hash in URL match
+
 };
+
 // apply
 $('pre').niceCodeLines(options);
 ```
