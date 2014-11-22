@@ -1,0 +1,49 @@
+.nice-code-lines{
+    overflow: hidden;
+    position: relative;
+    padding: 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.nice-code-lines pre{
+    border-radius: 0 4px 4px 0;
+    border-top: none;
+    border-bottom: none;
+    border-right: none;
+    border-bottom: 1px solid #f5f5f5;
+    overflow: auto;
+    margin: 0;
+}
+.nice-code-lines pre code{
+    display: inline-block;
+    width: 100%;
+}
+.nice-code-lines pre code .highlighted{
+    background: #ccc;
+    display: inline-block;
+    width: 100%;
+}
+.nice-code-lines .line-numbers{
+    float: left;
+    padding: 10px 3px;
+    line-height: 18px;
+    background: #f5f5f5;
+    border-radius: 4px 0 0 4px;
+}
+.nice-code-lines .line-numbers a{
+    display: block;
+    font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+    text-align: right;
+    cursor: pointer;
+    user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+}
+.nice-code-lines .line-numbers a i{
+    float: left;
+    visibility: hidden;
+}
+.nice-code-lines .line-numbers a:hover i{
+    visibility: visible;
+}

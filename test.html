@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>jQuery.codeLines</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+    <link href="src/line.css" rel="stylesheet">
+</head>
+<body style="padding: 20px;">
+
+<pre class="line">use \DataGrid\NetteDbDataSource,
+	\DataGrid\Grid;
+
+protected function createComponentBasicDataGrid($name) {
+	$source = new NetteDbDataSource($this->demo_model->getUserSelection());
+
+	$grid = new Grid($source, $this, $name);
+
+	return $grid;
+}</pre>
+
+<script src="src/line.js"></script>
+<script>
+    $(function(){
+        $('pre').niceCodeLines();
+    });
+</script>
+
+</body>
+</html>
